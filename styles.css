@@ -14,8 +14,8 @@ body {
 }
 
 .memory-game {
-  width: 840px;
-  height: 1040px;
+  width: 800px;
+  height: 800px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -58,9 +58,9 @@ body {
 
 
 #reset-button {
-  margin-top: 20px;
-  padding: 40px 50px;
-  font-size: 72px;
+  margin-top: 2px;
+  padding: 20px 30px;
+  font-size: 30px;
   cursor: pointer;
   border: none;
   background: black;
@@ -81,22 +81,35 @@ body {
 }
 
 .popup-box {
-  background: white;
-  padding: 20px;
+  background: black;
+  color: white;
+  padding: 60px; /* Increased padding for a much larger box */
   border-radius: 10px;
   text-align: center;
+  width: 600px; /* Wider box */
+  font-size: 25px; /* Increased text size */
 }
 
 .popup-box h2 {
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px; /* Larger heading */
 }
 
 .popup-box button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  margin-top: 30px;
+  padding: 20px 40px; /* Larger button */
+  font-size: 24px; /* Increased button text size */
 }
+
+body, button, .popup-box {
+  font-family: Arial, sans-serif; /* Replace with your desired font */
+}
+
+.popup-box pre {
+  text-align: left; /* Aligns text to the left */
+  display: inline-block; /* Keeps block width only as wide as content */
+  font-size: 22px; /* Adjust size if needed */
+  font-family: Arial, sans-serif;
+}
+
