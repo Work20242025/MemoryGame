@@ -68,3 +68,16 @@ body {
   color: white;
   border-radius: 5px;
 }
+
+@media (max-width: 500px) {
+  .memory-game {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .memory-card {
+    width: calc(33.333% - 10px); /* Use 3 columns instead of 4 */
+    height: calc(25% - 10px); /* 4 rows instead of 3 */
+  }
+}
+
