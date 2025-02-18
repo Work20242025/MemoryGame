@@ -14,8 +14,8 @@ body {
 }
 
 .memory-game {
-  width: 940px;
-  height: 940px;
+  width: 840px;
+  height: 1040px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -59,11 +59,44 @@ body {
 
 #reset-button {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 40px 50px;
+  font-size: 72px;
   cursor: pointer;
   border: none;
   background: black;
   color: white;
+  border-radius: 5px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-box h2 {
+  margin-bottom: 10px;
+}
+
+.popup-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
   border-radius: 5px;
 }
