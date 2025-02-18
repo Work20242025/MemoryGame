@@ -82,11 +82,11 @@ function showPopup() {
         <h2>🎉 Congratulations! You've completed the challenge! 🏆</h2>
         <h2>You’ve just unlocked the power of Maybank's T.I.G.E.R. Core Values:</h2>
         <pre>
-          <strong>T:Teamwork</strong><br>
-          <strong>I:Integrity</strong><br>
-          <strong>G:Growth</strong><br>
-          <strong>E:Excellence & Efficiency</strong><br>
-          <strong>R:Relationship Building</strong>
+          T:Teamwork<br>
+          I:Integrity<br>
+          G:Growth<br>
+          E:Excellence & Efficiency<br>
+          R:Relationship Building
         </pre>
         <br>
         <br>
