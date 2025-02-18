@@ -80,15 +80,17 @@ function showPopup() {
     <div class="popup-overlay">
       <div class="popup-box">
         <h2>🎉 Congratulations! You've completed the challenge! 🏆</h2>
-        <p>You’ve just unlocked the power of Maybank's T.I.G.E.R. Core Values:</p>
-        <p>
-          <strong>T:</strong> Teamwork <br>
-          <strong>I:</strong> Integrity <br>
-          <strong>G:</strong> Growth <br>
-          <strong>E:</strong> Excellence & Efficiency <br>
-          <strong>R:</strong> Relationship Building
-        </p>
-        <p>These core values are the foundation of Maybank’s culture, guiding how we work and interact every day!</p>
+        <h2>You’ve just unlocked the power of Maybank's T.I.G.E.R. Core Values:</h2>
+        <pre>
+          <strong>T:Teamwork</strong><br>
+          <strong>I:Integrity</strong><br>
+          <strong>G:Growth</strong><br>
+          <strong>E:Excellence & Efficiency</strong><br>
+          <strong>R:Relationship Building</strong>
+        </pre>
+        <br>
+        <br>
+        <h2>These core values are the foundation of Maybank’s culture, guiding how we work and interact every day!</h2>
         <button id="close-popup">OK</button>
       </div>
     </div>
