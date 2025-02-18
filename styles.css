@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: monospace;
 }
 
 body {
@@ -88,6 +89,7 @@ body {
   text-align: center;
   width: 600px; /* Wider box */
   font-size: 25px; /* Increased text size */
+  font-family: monospace;
 }
 
 .popup-box h2 {
@@ -102,14 +104,10 @@ body {
   font-size: 24px; /* Increased button text size */
 }
 
-body, button, .popup-box {
-  font-family: Arial, sans-serif; /* Replace with your desired font */
-}
-
 .popup-box pre {
   text-align: left; /* Aligns text to the left */
   display: inline-block; /* Keeps block width only as wide as content */
   font-size: 22px; /* Adjust size if needed */
-  font-family: Arial, sans-serif;
 }
+
 
