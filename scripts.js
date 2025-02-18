@@ -1,8 +1,10 @@
 const cards = document.querySelectorAll('.memory-card');
-
+const resetButton = document.getElementById('reset-button');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let matchedPairs = 0;
+const totalPairs = cards.length / 2; 
 
 function flipCard() {
   if (lockBoard) return;
@@ -11,29 +13,35 @@ function flipCard() {
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
-    // first click
     hasFlippedCard = true;
     firstCard = this;
-
     return;
   }
 
-  // second click
   secondCard = this;
-
   checkForMatch();
 }
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-  isMatch ? disableCards() : unflipCards();
+  if (isMatch) {
+    disableCards();
+    matchedPairs++;
+
+    if (matchedPairs === totalPairs) {
+      setTimeout(() => {
+        showPopup();
+      }, 500);
+    }
+  } else {
+    unflipCards();
+  }
 }
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
   resetBoard();
 }
 
@@ -43,9 +51,8 @@ function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
-  }, 1500);
+  }, 500);
 }
 
 function resetBoard() {
@@ -55,17 +62,41 @@ function resetBoard() {
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+    let randomPos = Math.floor(Math.random() * totalPairs * 2);
     card.style.order = randomPos;
   });
 })();
 
 function resetGame() {
-  location.reload(); // Refresh the page
+  location.reload();
 }
 
-const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener('click', resetGame);
-
-
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+function showPopup() {
+  const popup = document.createElement('div');
+  popup.innerHTML = `
+    <div class="popup-overlay">
+      <div class="popup-box">
+        <h2>🎉 Congratulations! You've completed the challenge! 🏆</h2>
+        <p>You’ve just unlocked the power of Maybank's T.I.G.E.R. Core Values:</p>
+        <p>
+          <strong>T:</strong> Teamwork <br>
+          <strong>I:</strong> Integrity <br>
+          <strong>G:</strong> Growth <br>
+          <strong>E:</strong> Excellence & Efficiency <br>
+          <strong>R:</strong> Relationship Building
+        </p>
+        <p>These core values are the foundation of Maybank’s culture, guiding how we work and interact every day!</p>
+        <button id="close-popup">OK</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  document.getElementById('close-popup').addEventListener('click', () => {
+    document.querySelector('.popup-overlay').remove();
+  });
+}
